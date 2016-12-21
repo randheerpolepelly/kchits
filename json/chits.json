@@ -1,0 +1,16 @@
+{
+  "chits": [
+    {
+      "groupName": "All Stars",
+      "startDate": "01/01/2017",
+      "chitValue": "1000000",
+      "term": "40"
+    },
+    {
+      "groupName": "No Stars",
+      "startDate": "01/01/2017",
+      "chitValue": "2000000",
+      "term": "40"
+     }
+  ]
+}

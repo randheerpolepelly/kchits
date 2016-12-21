@@ -1,85 +1,65 @@
 var $ = require("jQuery");
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 import TextBox from "./textboxComponent.js";
+import TitleComp from "./titleComponent.js";
 import NavigationComponent from "./navigationComponent.js";
+import HomePageComp from "./homePageComponent.js";
+import AboutUsComp from "./aboutUsComponent.js";
+import ContactUsComp from "./contactUsComponent.js";
+import NewChitComp from "./newChitComponent.js";
+import ChitListComp from "./chitListComponent.js";
+
+import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import chitApp from "./reducers/index.js";
+
 require("../css/style.css");
 
-class TitleComp extends React.Component {
-	render (){
-		return React.createElement('h4', {}, this.props.title);
-	}
+var intitalData = {
+  chits: [
+            {
+            "groupName": "All Stars",
+            "startDate": "01/01/2017",
+            "chitValue": "1000000",
+            "term": "40"
+            }
+        ],
+  chit: {
+            "groupName": "",
+            "startDate": "",
+            "chitValue": "",
+            "term": "40"
+          }
 };
 
-class HomePageComp extends React.Component {
-  render() {
-    return (
-      <div>
-        <TitleComp title="Welcome to K Chits" />
-      </div>
-    );
-  }
-}
-
-class AboutUsComp extends React.Component {
-  render() {
-    return (
-      <div>
-        <TitleComp title="About Us Page" />
-        <p> This page is under Contruction </p>
-      </div>
-    );
-  }
-}
-
-class NewChitComp extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      chit: {
-        "groupName": "All Stars",
-        "startDate": "",
-        "chitValue": "",
-        "term": ""
-      }
-    }
-  }
-  handleProjSubmit() {
-    console.log("In handleProjSubmit");
-  }
-
-  onInputChange() {
-    console.log("In onInputChange"); 
-  }
-
-  render (){
-    return (
-        <div className="well">
-          <TitleComp title="Add Chit Fund"/>
-          <form onSubmit={this.handleProjSubmit}>
-            <TextBox value={this.state.chit.groupName} labelName="Group Name" name="groupName" onChange={this.onInputChange}/>
-            <TextBox value={this.state.chit.startDate} labelName="Start Date" name="startDate" onChange={this.onInputChange}/>
-            <TextBox value={this.state.chit.chitValue} labelName="Chit Value" name="chitValue" onChange={this.onInputChange}/>
-            <TextBox value={this.state.chit.term} labelName="Term (In Months)" name="term" onChange={this.onInputChange}/>
-            <input type="Submit" value="Submit" className="btn btn-primary"/>
-          </form>
-        </div>
-    );
-  }
-}
-
+let store = createStore(chitApp);
+console.log(store.getState());
+// let chitData = {
+//        "groupName": "No Stars",
+//         "startDate": "01/01/2018",
+//         "chitValue": "2000000",
+//         "term": "40"
+// }
+// store.dispatch({type: "ADD_CHIT", chitData: chitData});
+// console.log("After Dispatch");
+// console.log(store.getState());
 
 class PageComp extends React.Component {
     render() {
       return (
-         <Router history={hashHistory}>
+        <Provider store={store}>
+          <Router history={hashHistory}>
             <Route path="/" component={NavigationComponent} >
               <IndexRoute component={HomePageComp} />
+              <Route path="/chits" foo="bar" component={ChitListComp} />
               <Route path="/aboutUs" component={AboutUsComp} />
+              <Route path="/contactUs" component={ContactUsComp} />
               <Route path="/newChit" component={NewChitComp} />
             </Route>
           </Router>
+        </Provider>
       );
     }
 }
