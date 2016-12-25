@@ -2,10 +2,11 @@
   "name": "kchits_redux",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --debug"
+    "build": "webpack --debug",
+    "start": "node src/server.js"
   },
   "author": "Sriram R",
   "license": "ISC",

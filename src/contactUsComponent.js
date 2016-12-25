@@ -18,8 +18,8 @@ export default class ContactUsComp extends React.Component {
   }
   render() {
     return (
-      <div>
-        <TitleComp title="Contact Us at:" />
+      <div className="col-sm-12">
+    	<TitleComp title="Contact Us at:" />
         <div className="col-sm-6">
 			<p>
 				HNo: 11-13-192/B, Green Hills Colony
@@ -41,7 +41,7 @@ export default class ContactUsComp extends React.Component {
 			</p>
 		</div>
 		<div div className="col-sm-6">
-		<div id="kchitsMap"></div>
+			<div id="kchitsMap"></div>
 		</div>
       </div>
     );

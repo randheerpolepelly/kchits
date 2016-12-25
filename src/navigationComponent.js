@@ -32,7 +32,7 @@ export default class NavigationComponent extends React.Component {
             </div>
           </div>
         </div>
-        <div className="well">
+        <div className="well col-sm-12">
             { this.props.children }
         </div>
         <hr/>
