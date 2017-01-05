@@ -2,9 +2,9 @@ var webpack = require('webpack');
 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './public/scripts/index.js',
   output: {
-    filename: './dist/bundle.js'
+    filename: './public/dist/bundle.js'
   },
   module: {
     loaders: [

@@ -1,14 +1,14 @@
-var $ = require("jQuery");
+//var $ = require("jQuery");
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TextBox from "./textboxComponent.js";
-import TitleComp from "./titleComponent.js";
-import NavigationComponent from "./navigationComponent.js";
-import HomePageComp from "./homePageComponent.js";
-import AboutUsComp from "./aboutUsComponent.js";
-import ContactUsComp from "./contactUsComponent.js";
-import NewChitComp from "./newChitComponent.js";
-import ChitListComp from "./chitListComponent.js";
+import TextBox from "./components/textboxComponent.js";
+import TitleComp from "./components/titleComponent.js";
+import NavigationComponent from "./components/navigationComponent.js";
+import HomePageComp from "./components/homePageComponent.js";
+import AboutUsComp from "./components/aboutUsComponent.js";
+import ContactUsComp from "./components/contactUsComponent.js";
+import NewChitComp from "./components/newChitComponent.js";
+import ChitListComp from "./components/chitListComponent.js";
 
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';

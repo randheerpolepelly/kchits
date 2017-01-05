@@ -1,4 +1,4 @@
-var $ = require("jQuery");
+//var $ = require("jQuery");
 import React from 'react';
 import TitleComp from "./titleComponent.js";
 

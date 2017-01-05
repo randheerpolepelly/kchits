@@ -2,7 +2,7 @@ import React from 'react';
 import TextBox from "./textboxComponent.js";
 import TitleComp from "./titleComponent.js";
 
-import { addChit, addChitInputChange } from "./actions/index.js";
+import { addChit, addChitInputChange } from "../actions/index.js";
 import { connect } from 'react-redux';
 
 class NewChitComp extends React.Component {
